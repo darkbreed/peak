@@ -1,0 +1,35 @@
+{
+  "name": "blogapi",
+  "version": "1.0.0",
+  "description": "Blog engine API",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "author": "Ben Reed",
+  "license": "ISC",
+  "dependencies": {
+    "csvtojson": "^1.0.0",
+    "dropbox": "^2.1.0",
+    "express": "^4.14.0",
+    "gravatar": "^1.5.2",
+    "mongoose": "^4.5.9",
+    "nunjucks": "^2.4.2",
+    "wiki-infobox-parser": "^0.1.11",
+    "wtf_wikipedia": "^0.5.1-g"
+  },
+  "devDependencies": {
+    "junk": "^0.3.0",
+    "marked": "^0.3.2",
+    "meta-marked": "^0.3.1",
+    "morgan": "^1.7.0",
+    "node-find-files": "0.0.2",
+    "node-markdown": "^0.1.1",
+    "paginator": "1.0.0",
+    "grunt": "^0.4.5",
+    "grunt-contrib-compass": "^0.9.0",
+    "grunt-contrib-watch": "^0.6.1",
+    "findit": "^2.0.0",
+    "moment": "^2.7.0"
+  }
+}

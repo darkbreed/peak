@@ -1,0 +1,201 @@
+@import '_settings.scss';
+@import 'timeline.scss';
+@import url(http://fonts.googleapis.com/css?family=Glegoo|Condiment|Pathway+Gothic+One|Nothing+You+Could+Do);
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
+$bodyTextColour: #d6d6d6;
+$tint: rgba(0,0,0,0.6);
+$grey: #999999;
+$white: #FFF;
+$footerTest: #FFF;
+
+@mixin center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@mixin fadeIn {
+    opacity: 1;
+    -webkit-transition: .5s ease-in 0.5s;
+    -moz-transition: .5s ease-in 0.5s;
+}
+
+html {
+    
+    p,a, h1, h2,h3,h4,h5, h6{
+        font-family: 'Open Sans';
+        font-weight: 100;
+        font-variant: "Light"
+    }
+}
+
+.row {
+
+}
+
+span.tags-label {
+    font-family: 'Nothing You Could Do', cursive;
+}
+
+body {
+  
+}
+
+header {
+    height: 90%;
+    background-color: #8a8a8a;
+    background-image: url('/static/img/background.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    .top-bar {
+        background-color: transparent;
+
+        .top-bar-section ul li {
+            background: transparent;
+        }
+
+        .top-bar-section li:not(.has-form) a:not(.button){
+            background: transparent;
+        }
+    }
+
+    .top-bar.expanded {
+        .title-area {
+            background: transparent;
+        }
+    }
+
+    nav {
+        padding-top: 10px;
+    }
+
+    #logo {
+
+        padding: 100px 25px 0 25px;
+        img {
+            width: 100%;
+            margin: 0;
+        }
+    }
+
+    #us {
+        padding-top: 25px;
+        img {
+            display: block;
+            margin: 0 auto;
+            height: 200px;
+        }
+    }
+}
+
+#peakProgress {
+    width: 100px;
+    height: 100px;
+}
+
+#peakProgress > svg {
+    width: 100%;
+    display: block;
+}
+
+#content {
+
+    #content-top {
+        height: 30px;
+        background-color: #fbf3ee;
+        border-bottom: 1px solid #d3b8a7;
+    }
+
+    #content-main{
+        padding-top: 50px;
+        background-color: #e7e7e7;
+    }
+}
+
+footer {
+
+    
+    padding: 50px 0px 0px 0px;
+    background-color: #5f4644;
+
+    p {
+        font-size: 0.9em;
+        color: $footerTest;
+    }
+
+    a {
+        color: $footerTest;
+    }
+    
+    h3 {
+        color: $footerTest;
+        font-size: 1.2em;
+    }
+
+    #meta {
+        background-color: #4f3b37;
+        height: 50px;
+        p {
+            color: #8a8a8a;
+            margin: 10px 0 0 0;
+        }
+    }
+} 
+
+.circle {
+    border-radius: 50%;
+}
+
+#main-menu {
+    a.item label {
+
+    }
+}
+
+.sidebar.columns,
+#content #grid .columns {
+    
+}
+
+#sidebar.page-loaded {
+
+}
+
+#content.page-loaded {
+    
+}
+
+#content {
+    
+}
+
+#sidebar {
+    
+}
+
+#hero {
+    
+}
+
+#grid {
+    
+}
+
+.grid-item {
+
+   
+}
+
+article {
+
+}
+
+h3.article-body {
+    
+}
+
+h1,h2,h3,h4,h5,h6 {
+    
+}

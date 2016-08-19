@@ -1,0 +1,31 @@
+{
+  "locals": {
+    "url": "http://localhost:3000",
+    "name": "One Hundred Peaks",
+    "owner": "Ben Reed",
+    "description": "Hiking stuff"
+  },
+  "app": {
+    "port": 3000
+  },
+  "settings":{
+    "articlesPerPage": 10,
+    "pagerLinks": 10,
+    "postDisplayDateFormat": "MMMM Do YYYY, h:mm:ss a",
+    "disqussUsername":"onehundredpeaks"
+  },
+  "templates": {
+    "listview": "list.html",
+    "directory": "directory.html",
+    "rss": "feed.html",
+    "home": "index.html",
+    "post": "post.html",
+    "author": "author.html",
+    "post-video": "post-video.html",
+    "post-image": "post-image.html",
+    "post-gallery": "post-gallery.html"
+  },
+  "page": {
+    "social": {}
+  }
+}

@@ -1,0 +1,45 @@
+{% extends "layout.html" %}
+
+{% block content %}
+      <!-- Top Navigation -->
+        {% if posts %}
+          {% for post in posts %}
+          <div class="large-12 columns">
+            <div class="grid-item clearfix">
+              <div class="large-3 columns">
+                <a href="/{{post.meta.url}}"><img class="desaturate" src="http://placehold.it/350x150"></a>
+              </div>
+              <div class="large-9 columns">
+                <h3><a href="/{{post.meta.url}}">{{post.meta.title}}</a></h3>
+                <hr/>
+                <div class="date">Published {{post.meta.displayDate}}</div>
+                <div class="tags"><span class="tags-label">Tags: </span>
+                  {% for tag in post.meta.tags %}
+                  <a href="/tags/{{tag}}">{{tag}}</a>,
+                  {% endfor %}</div>
+                <p class="intro">{{post.meta.intro}}</p>
+              </div>
+            </div> 
+          </div> 
+          {% endfor %}
+          {% if pager %}
+            {% if pager.has_previous_page %}
+            <div class="medium-2 columns">
+              <a class="button small left radius expand" href="{{contentType}}?page={{pager.previous_page}}">Previous</a>
+            </div>
+            {% endif %}
+
+            {% if pager.has_next_page %}
+            <div class="medium-2 columns">
+              <a class="button small right radius expand" href="{{contentType}}?page={{pager.next_page}}">Next</a>
+            </div>
+            {% endif %}
+
+          {% endif %}
+        </div>
+
+        {% else %}
+          <h2>Oops... sorry no results we found</h2>
+        {% endif %}
+
+{% endblock %}
