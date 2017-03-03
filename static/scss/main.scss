@@ -1,201 +1,179 @@
-@import '_settings.scss';
-@import 'timeline.scss';
-@import url(http://fonts.googleapis.com/css?family=Glegoo|Condiment|Pathway+Gothic+One|Nothing+You+Could+Do);
-@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+@import 'libs/vars';
+@import 'libs/functions';
+@import 'libs/mixins';
+@import 'libs/skel';
+@import 'font-awesome.min.css';
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300i,400,400i');
 
-$bodyTextColour: #d6d6d6;
-$tint: rgba(0,0,0,0.6);
-$grey: #999999;
-$white: #FFF;
-$footerTest: #FFF;
+/*
+	Story by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+*/
 
-@mixin center {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-}
+	@include skel-breakpoints((
+		xlarge: '(max-width: 1680px)',
+		large: '(max-width: 1280px)',
+		medium: '(max-width: 980px)',
+		small: '(max-width: 736px)',
+		xsmall: '(max-width: 480px)',
+		xxsmall: '(max-width: 360px)'
+	));
 
-@mixin fadeIn {
-    opacity: 1;
-    -webkit-transition: .5s ease-in 0.5s;
-    -moz-transition: .5s ease-in 0.5s;
-}
+	@include skel-layout((
+		reset: 'full',
+		boxModel: 'border',
+		grid: ( gutters: 2rem )
+	));
 
-html {
-    
-    p,a, h1, h2,h3,h4,h5, h6{
-        font-family: 'Open Sans';
-        font-weight: 100;
-        font-variant: "Light"
-    }
-}
+	@mixin color($p) {
+		@include color-typography($p);
+		@include color-box($p);
+		@include color-button($p);
+		@include color-form($p);
+		@include color-icon($p);
+		@include color-list($p);
+		@include color-section($p);
+		@include color-table($p);
+		@include color-banner($p);
+		@include color-spotlight($p);
+		@include color-gallery($p);
+		@include color-items($p);
+		@include color-index($p);
+	}
 
-.row {
+	@mixin phone($image-width) {
+		@include vendor('flex-grow', '0');
+		@include vendor('flex-shrink', '0');
+		border-radius: 0;
+		border: solid _size(border-width);
 
-}
+		img {
+			@include vendor('object-fit', 'cover');
+			@include vendor('object-position', 'center');
+			display: block;
+			width: 100%;
+			height: 100%;
+			border-radius: 0;
+		}
 
-span.tags-label {
-    font-family: 'Nothing You Could Do', cursive;
-}
+		&:before {
+			content: '';
+			display: block;
+			background-position: center;
+			background-repeat: no-repeat;
+			border: solid _size(border-width);
+			border-bottom: 0;
+		}
 
-body {
-  
-}
+		&:after {
+			content: '';
+			display: block;
+			background-position: center;
+			background-repeat: no-repeat;
+			border: solid _size(border-width);
+			border-top: 0;
+		}
 
-header {
-    height: 90%;
-    background-color: #8a8a8a;
-    background-image: url('/static/img/background.jpg');
-    background-size: cover;
-    background-repeat: no-repeat;
+		@include resize-phone($image-width, 1);
+	}
 
-    .top-bar {
-        background-color: transparent;
+	@mixin resize-phone($image-width, $image-factor) {
+		$image-pad-top: 2.5rem;
+		$image-pad-bottom: 3rem;
+		$image-height: ($image-width * (1920 / 1080));
 
-        .top-bar-section ul li {
-            background: transparent;
-        }
+		width: ($image-width * $image-factor);
+		height: (($image-width * $image-factor) * (1920 / 1080));
+		margin-top: ($image-pad-top * $image-factor);
+		margin-bottom: (_size(element-margin) + ($image-pad-bottom * $image-factor));
 
-        .top-bar-section li:not(.has-form) a:not(.button){
-            background: transparent;
-        }
-    }
+		&:before {
+			height: ($image-pad-top * $image-factor);
+			background-size: (64px * $image-factor) (32px * $image-factor);
+			margin-top: (($image-pad-top * $image-factor) * -1);
+			border-radius: (1rem * $image-factor) (1rem * $image-factor) 0 0;
+		}
 
-    .top-bar.expanded {
-        .title-area {
-            background: transparent;
-        }
-    }
+		&:after {
+			height: ($image-pad-bottom * $image-factor);
+			background-size: (64px * $image-factor) (32px * $image-factor);
+			margin-bottom: (($image-pad-bottom * $image-factor) * -1);
+			border-radius: 0 0 (1rem * $image-factor) (1rem * $image-factor);
+		}
+	}
 
-    nav {
-        padding-top: 10px;
-    }
+	@mixin color-phone($p) {
+		border-color: _palette($p, border);
+		background-color: _palette($p, border);
 
-    #logo {
+		@if ($p != 'invert') {
+			border-width: 0;
+		}
+		@else {
+			border-width: _size(border-width);
+		}
 
-        padding: 100px 25px 0 25px;
-        img {
-            width: 100%;
-            margin: 0;
-        }
-    }
+		&:before {
+			background-image: svg-url('<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="64px" height="32px" viewBox="0 0 64 32" zoomAndPan="disable"><style>rect {fill: transparent; stroke: #{_palette($p, border)}; stroke-width: #{_size(border-width)}; }</style><rect rx="4" ry="4" x="11" y="12" width="42" height="8" vector-effect="non-scaling-stroke" /></svg>');
+			border-color: _palette($p, border);
 
-    #us {
-        padding-top: 25px;
-        img {
-            display: block;
-            margin: 0 auto;
-            height: 200px;
-        }
-    }
-}
+			@if ($p == 'invert') {
+				width: calc(100% + #{_size(border-width) * 2});
+				margin-left: (_size(border-width) * -1);
+			}
+			@else {
+				width: 100%;
+			}
+		}
 
-#peakProgress {
-    width: 100px;
-    height: 100px;
-}
+		&:after {
+			background-image: svg-url('<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="64px" height="32px" viewBox="0 0 64 32" zoomAndPan="disable"><style>circle {fill: transparent; stroke: #{_palette($p, border)}; stroke-width: #{_size(border-width)}; }</style><circle cx="32" cy="16" r="14" vector-effect="non-scaling-stroke" /></svg>');
+			border-color: _palette($p, border);
 
-#peakProgress > svg {
-    width: 100%;
-    display: block;
-}
+			@if ($p == 'invert') {
+				width: calc(100% + #{_size(border-width) * 2});
+				margin-left: (_size(border-width) * -1);
+			}
+			@else {
+				width: 100%;
+			}
+		}
+	}
 
-#content {
+	@mixin color-phone-variant($v, $p) {
+		@if ($v == 'android') {
+			&:after {
+				background-image: svg-url('<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="64px" height="32px" viewBox="0 0 64 32" zoomAndPan="disable"><style>rect {fill: transparent; stroke: #{_palette($p, border)}; stroke-width: #{_size(border-width)}; }</style><rect rx="4" ry="4" x="6" y="4" width="52" height="24" vector-effect="non-scaling-stroke" /></svg>');
+			}
+		}
+		@else if ($p == 'iphone') {
+			// ...
+		}
+	}
 
-    #content-top {
-        height: 30px;
-        background-color: #fbf3ee;
-        border-bottom: 1px solid #d3b8a7;
-    }
+// Base.
 
-    #content-main{
-        padding-top: 50px;
-        background-color: #e7e7e7;
-    }
-}
+	@import 'base/page';
+	@import 'base/typography';
 
-footer {
+// Component.
 
-    
-    padding: 50px 0px 0px 0px;
-    background-color: #5f4644;
+	@import 'components/box';
+	@import 'components/button';
+	@import 'components/form';
+	@import 'components/icon';
+	@import 'components/image';
+	@import 'components/list';
+	@import 'components/section';
+	@import 'components/table';
+	@import 'components/banner';
+	@import 'components/spotlight';
+	@import 'components/gallery';
+	@import 'components/wrapper';
+	@import 'components/items';
+	@import 'components/index';
 
-    p {
-        font-size: 0.9em;
-        color: $footerTest;
-    }
+// Layout.
 
-    a {
-        color: $footerTest;
-    }
-    
-    h3 {
-        color: $footerTest;
-        font-size: 1.2em;
-    }
-
-    #meta {
-        background-color: #4f3b37;
-        height: 50px;
-        p {
-            color: #8a8a8a;
-            margin: 10px 0 0 0;
-        }
-    }
-} 
-
-.circle {
-    border-radius: 50%;
-}
-
-#main-menu {
-    a.item label {
-
-    }
-}
-
-.sidebar.columns,
-#content #grid .columns {
-    
-}
-
-#sidebar.page-loaded {
-
-}
-
-#content.page-loaded {
-    
-}
-
-#content {
-    
-}
-
-#sidebar {
-    
-}
-
-#hero {
-    
-}
-
-#grid {
-    
-}
-
-.grid-item {
-
-   
-}
-
-article {
-
-}
-
-h3.article-body {
-    
-}
-
-h1,h2,h3,h4,h5,h6 {
-    
-}
+	@import 'layout/wrapper';

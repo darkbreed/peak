@@ -25,20 +25,24 @@ exports.getArchive = function(callback){
 	var archive = new Object();
 
 	//get all posts
-	loadPosts({}, function(data){
+	this.loadPosts({}, function(data){
 
 		var posts = data.results;
 
 		posts.forEach(function(result){
 
 			var year = moment(result.meta.date).format("YYYY");
-			
+
 			//Have we got the year already?
 			if(!archive[year]){
 
 				archive[year] = {
 					posts: new Array()
 				};
+
+				if(archive[year].posts.indexOf(result.meta.title) == -1){
+					archive[year].posts.push(result);
+				}
 
 			//If we have add the post to the array
 			}else{
@@ -50,6 +54,8 @@ exports.getArchive = function(callback){
 			}
 
 		});
+
+		console.log(archive);	
 
 		callback(archive);
 
@@ -78,13 +84,15 @@ exports.loadPosts = function(options, callback){
 
 	var posts = new Array();
 
+	//Walk the directory looking for '.md' files to parse
 	walk(dir, 'md', function(err, files){
 
 		if(files){
-			//Read each index.md file to get the metadata
+
+			//Each file has yaml meta data, parse the file to get this.
 			files.forEach(function(file){
 
-				var post = module.exports.createPostFromFile(file, options);
+				var post = module.exports.createPostObjectFromFile(file, options);
 
 				//Add the post to the results
 				if(options.hasOwnProperty('tag')){
@@ -97,15 +105,16 @@ exports.loadPosts = function(options, callback){
 
 			});
 
+			//Sort the posts by date
 			posts.sort(function(a,b){
 				return new Date(b.meta.date) - new Date(a.meta.date);
 			});
 
+			//If we are paginating the list, manipulate the array here
 			if(options.pageNumber){
 
 				var pager = paginator.build(posts.length,options.pageNumber);
-				console.log(pager);
-
+			
 				if(posts.length > config.settings.articlesPerPage){
 					posts = posts.slice(pager.first_result,pager.last_result);
 				}
@@ -119,15 +128,13 @@ exports.loadPosts = function(options, callback){
 				callback({results:posts});
 			}
 		}else{
-
 			callback();
-		
 		}
 
 	});
 }
 
-exports.createPostFromFile = function(file, options){
+exports.createPostObjectFromFile = function(file, options){
 
 	//Create a post object
 	var post = md(fs.readFileSync(file, "utf8"));	
@@ -173,7 +180,7 @@ exports.loadPost = function(req, callback){
 				if(getExtension(files[file]) === 'md'){
 
 					var file = dir+'/'+files[file];
-					var post = module.exports.createPostFromFile(file);
+					var post = module.exports.createPostObjectFromFile(file);
 
 					callback(post);
 					
@@ -188,31 +195,42 @@ exports.loadPost = function(req, callback){
  * Finds all files with a given extension in a directory structure 
  **/
 var walk = function(dir, extension, done) {
+
   var results = [];
+
+  //Read the directory
   fs.readdir(dir, function(err, list) {
     
     if (err) return done(err);
     
     var pending = list.length;
     
+    //If no files then return null
     if (!pending) return done(null, results);
     
+    //Else list the files
     list.forEach(function(file) {
       file = dir + '/' + file;
-      
+
       fs.stat(file, function(err, stat) {
         
+        //Check to see if this is a sub directory
         if (stat && stat.isDirectory()) {
-          
-          walk(file, extension, function(err, res) {
 
-          	if(getExtension(res) == extension){
-          		results = results.concat(res);
-          	}
+        	console.log("Is directory: "+file);
+          	
+          	//Walk the sub directory
+          	walk(file, extension, function(err, res) {
+          		
+          		if(getExtension(res.toString()) == extension){
+          			results = results.concat(res);
+          		}
 
-            if (!--pending) done(null, results);
+          		console.log("Results: "+results);
+
+            	if (!--pending) done(null, results);
           
-          });
+          	});
 
         } else {
           
@@ -233,6 +251,12 @@ var walk = function(dir, extension, done) {
  * Utility method to get the extension of a given file
  **/
 var getExtension = function(filename) {
-    var ext = path.extname(filename||'').split('.');
-    return ext[ext.length - 1];
+
+	if(typeof(filename) === 'string'){
+		var ext = path.extname(filename||'').split('.');
+    	return ext[ext.length - 1];
+	}else{
+		return null;
+	}
+
 }

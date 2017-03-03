@@ -34,19 +34,13 @@ var faviconFix = function(req, res, next){
 	}
 }
 
-function initApp(){
-
-}
-
-initApp();
-
 /**
  * 1. Home
  * Load the homepage. Can be specified in the config file
  **/
 app.get('/', function(req, res){
 	
-	blogHelper.loadPosts({pageNumber: 1}, function(data){
+	blogHelper.loadPosts({pageNumber: 1, contentType:'blog'}, function(data){
 		var page = blogHelper.pageObject();
 		page.posts = data.results;
 		page.pager = data.page;

@@ -4,5 +4,11 @@
     "name": "Ben Reed",
     "bio": "Developer, cook, homebrewer, photographer and amateur gardiner and quail keeper... until the foxes get them. Head of Mobile at @careflowconnect",
     "email": "ben@benreed.me"
+  },
+  "julie":{
+    "shortname": "julie",
+    "name": "Julie Reed",
+    "bio": "",
+    "email": "julieclariec@gmail.com"
   }
 }
