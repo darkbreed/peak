@@ -4,23 +4,19 @@
       <!-- Top Navigation -->
         {% if posts %}
           {% for post in posts %}
-          <div class="large-12 columns">
-            <div class="grid-item clearfix">
-              <div class="large-3 columns">
-                <a href="/{{post.meta.url}}"><img class="desaturate" src="http://placehold.it/350x150"></a>
-              </div>
-              <div class="large-9 columns">
-                <h3><a href="/{{post.meta.url}}">{{post.meta.title}}</a></h3>
-                <hr/>
-                <div class="date">Published {{post.meta.displayDate}}</div>
-                <div class="tags"><span class="tags-label">Tags: </span>
-                  {% for tag in post.meta.tags %}
-                  <a href="/tags/{{tag}}">{{tag}}</a>,
-                  {% endfor %}</div>
-                <p class="intro">{{post.meta.intro}}</p>
-              </div>
-            </div> 
-          </div> 
+          <div class="blog-post">
+            <h6 class="text-center">{{post.meta.displayDate}}</h6>
+            <h3 class="text-center"><a href="/{{post.meta.url}}">{{post.meta.title}}</a></h3>
+            <img class="thumbnail" src="https://placehold.it/850x350">
+            <p class="intro">{{post.meta.intro}}</p>
+            <div class="callout">
+            <ul class="menu simple">
+              {% for tag in post.meta.tags %}
+                <li><a href="/tags/{{tag}}">{{tag}}</a></li>
+              {% endfor %}
+            </ul>
+            </div>
+          </div>
           {% endfor %}
           {% if pager %}
             {% if pager.has_previous_page %}
