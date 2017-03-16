@@ -2,14 +2,11 @@
 
 {% block content %}
     
-    <div class="large-12 columns" role="content">
-      <article>  
+      <article class="blog-post detail">  
         <div class="large-12 columns">
 
           <h2>{{ post.meta.title }}</h2>
-          <img src="{{post.meta.author.gravatarUrl}}" />
-          <h5>Written by <a href="/authors/{{post.meta.author.shortname}}">{{post.meta.author.name}}</a> on {{post.meta.displayDate}}</h5>
-              
+          
           <div class="tags no-print">
             <p><span class="tags-label">Tags</span>:
               {% for tag in post.meta.tags %}
@@ -19,7 +16,7 @@
           </div>
       
         </div>
-        <div class="large-12 columns">
+        <div class="large-12 columns post-content">
           <hr />
           {{ post.html|safe }}
         </div>
@@ -30,11 +27,15 @@
           <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=benreed"></script>
         </div> 
 
+        <div class="small-12 columns post-meta">
+          <img src="{{post.meta.author.gravatarUrl}}" />
+          <h5>Written by <a href="/authors/{{post.meta.author.shortname}}">{{post.meta.author.name}}</a> on {{post.meta.displayDate}}</h5>
+        </div>
+
       </article>
       <div class="large-12 columns">
         <div id="disqus_thread"></div>    
       </div>
-    </div>
 
     <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 

@@ -1,0 +1,53 @@
+@import url('https://fonts.googleapis.com/css?family=Amatic+SC|PT+Sans|Vollkorn');
+
+$sans-serif: 'PT Sans', sans-serif;
+$serif: 'Vollkorn', serif;
+$display: 'Amatic SC', cursive;
+
+$body-text-colour: #403d34;
+$link-colour: #ccb285;
+$title-colour: rgb(33,25,49); 
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: $serif;
+	color: $body-text-colour;
+
+	a {
+		color: $body-text-colour;
+	}
+}
+
+h1#site-title {
+	font-family: $display;
+	text-align:center;
+	color: $title-colour;
+	font-size: 6em;
+}
+
+a {
+	color: $link-colour;
+}
+
+.blog-post {
+	
+	h2 {
+		color: $title-colour;
+	}
+
+	font-family: $serif;
+	color: $body-text-colour;
+	
+	.post-date {
+		font-family: $sans-serif; 
+	}
+
+	.post-content {
+		font-family: $serif;
+	}
+}
+
+span.serif-italic {
+	font-family: $serif;
+	font-style: italic;
+	font-size: 0.8em;
+}

@@ -11,7 +11,8 @@
   "settings":{
     "articlesPerPage": 10,
     "pagerLinks": 10,
-    "postDisplayDateFormat": "MMMM Do YYYY, h:mm:ss a",
+    "postDisplayDateTimeFormat": "MMMM Do YYYY, h:mm:ss a",
+    "postDisplayDateFormat": "MMMM Do YYYY",
     "disqussUsername":"onehundredpeaks"
   },
   "templates": {

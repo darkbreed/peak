@@ -2,12 +2,13 @@
 
 {% block content %}
       <!-- Top Navigation -->
+      <div class="list">
         {% if posts %}
           {% for post in posts %}
           <div class="blog-post">
-            <h6 class="text-center">{{post.meta.displayDate}}</h6>
             <h3 class="text-center"><a href="/{{post.meta.url}}">{{post.meta.title}}</a></h3>
-            <img class="thumbnail" src="https://placehold.it/850x350">
+            <h6 class="text-center post-date"><span class="serif-italic">Posted by</span> {{post.meta.author.shortname}} <span class="serif-italic">on</span> {{post.meta.displayDate}}</h6>
+            <img class="thumbnail text-center" src="https://placehold.it/850x350">
             <p class="intro">{{post.meta.intro}}</p>
             <div class="callout">
             <ul class="menu simple">
@@ -33,6 +34,7 @@
 
           {% endif %}
         </div>
+      </div>
 
         {% else %}
           <h2>Oops... sorry no results we found</h2>

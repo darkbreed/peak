@@ -1,0 +1,40 @@
+/* line 5, ../scss/main.scss */
+header {
+  height: 400px;
+  background-size: 100%;
+  background-position: 0 -200px;
+  background-repeat: no-repeat;
+  background-image: url(../images/banner.jpg);
+}
+/* line 12, ../scss/main.scss */
+header .top-bar {
+  background-color: rgba(39, 37, 33, 0.3);
+}
+/* line 14, ../scss/main.scss */
+header .top-bar .menu {
+  background: transparent;
+}
+/* line 17, ../scss/main.scss */
+header .top-bar .menu li a {
+  color: #FFF;
+}
+
+/* line 24, ../scss/main.scss */
+footer {
+  color: #FFF;
+  background-color: #272521;
+}
+/* line 27, ../scss/main.scss */
+footer a {
+  color: #FFF;
+}
+
+/* line 34, ../scss/main.scss */
+.list .blog-post {
+  text-align: center;
+}
+
+/* line 40, ../scss/main.scss */
+.blog-post.detail h2 {
+  text-align: center;
+}

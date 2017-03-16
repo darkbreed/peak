@@ -1,0 +1,43 @@
+$footer-colour: rgb(39, 37, 33);
+$navbar-colour: rgba(39, 37, 33, 0.3);
+$navigation-link-color: #FFF;
+
+header {
+	height: 400px;
+	background-size: 100%;
+	background-position: 0 -200px;
+	background-repeat: no-repeat;
+	background-image: url(../images/banner.jpg);
+
+	.top-bar {
+		background-color: $navbar-colour;
+		.menu {
+			background: transparent;
+			
+			li a {
+				color: $navigation-link-color;
+			}
+		}
+	}
+}
+
+footer {
+	color: $navigation-link-color;
+	background-color: $footer-colour;
+	a {
+		color: $navigation-link-color;
+	}
+
+}
+
+.list {
+	.blog-post {
+		text-align: center;
+	}
+}
+
+.blog-post.detail {
+	h2 {
+		text-align:center;
+	}
+}

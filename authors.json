@@ -3,12 +3,19 @@
     "shortname": "ben",
     "name": "Ben Reed",
     "bio": "Developer, cook, homebrewer, photographer and amateur gardiner and quail keeper... until the foxes get them. Head of Mobile at @careflowconnect",
-    "email": "ben@benreed.me"
+    "email": "ben@benreed.me",
+    "social": {
+      "twitter": "https://www.twitter.com/darkbreed",
+      "flickr": "https://www.flickr.com/photos/darkbreed/"
+    }
   },
   "julie":{
     "shortname": "julie",
     "name": "Julie Reed",
     "bio": "",
-    "email": "julieclariec@gmail.com"
+    "email": "julieclariec@gmail.com",
+    "social": {
+      "twitter": "https://www.twitter.com/julieclariec"
+    }
   }
 }

@@ -19,9 +19,6 @@ nunjucks.configure('views', {
   express   : app
 });
 
-//Configure Morgan logging
-//app.use(morgan('combined'));
-
 //Set up the static content directories for client side assets
 app.use('/static',express.static(__dirname + '/static'));
 app.use('/images',express.static(__dirname + IMAGE_DIR));
