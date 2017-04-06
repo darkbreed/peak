@@ -12,7 +12,7 @@ module.exports = function(grunt) {
     watch: {
       sass: {
         files: [
-          'static/scss/**/*.scss'
+          'static/scss/**/*.scss',
         ],
         tasks: [
           'compass:dev'

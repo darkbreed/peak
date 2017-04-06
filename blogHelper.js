@@ -55,8 +55,6 @@ exports.getArchive = function(callback){
 
 		});
 
-		console.log(archive);	
-
 		callback(archive);
 
 	});
@@ -107,7 +105,7 @@ exports.loadPosts = function(options, callback){
 
 			//Sort the posts by date
 			posts.sort(function(a,b){
-				return new Date(b.meta.date) - new Date(a.meta.date);
+				return new Date(b.meta.postDate) - new Date(a.meta.postDate);
 			});
 
 			//If we are paginating the list, manipulate the array here
@@ -135,34 +133,38 @@ exports.loadPosts = function(options, callback){
 }
 
 exports.createPostObjectFromFile = function(file, options){
-
+	console.log(file);
 	//Create a post object
 	var post = md(fs.readFileSync(file, "utf8"));	
 	var components = file.split(path.sep);
-	
 	components.pop();
-	components = components.slice(components.length - 2);
+	components = components.slice(components.length - 3);
 	
 	var articleDir = components.join('/');
 	post.meta.url = articleDir;
-	post.meta.featureImage = "/images/"+post.meta.featureImage;
+
+	var featureImagePath = "./content/"+articleDir+"/featureImage.jpg";
+	if(fs.existsSync(featureImagePath)){
+		post.meta.featureImage = featureImagePath;
+	}
 
 	var author = authors[post.meta.author];
 
 	var fileStats = fs.statSync("./content/"+articleDir+"/index.md");
-	post.meta.displayDate = moment(fileStats.mtime).format(config.settings.postDisplayDateFormat);
+	post.meta.displayDate = moment(post.meta.postDate).format(config.settings.postDisplayDateFormat);
 	post.meta.author = author;
 	post.meta.author.gravatarUrl = gravatar.url(author.email, {s: '200', r: 'pg', d: '404'});
 
 	if(options){
 		post.contentType = options.contentType ? options.contentType : null;
 	} 
+
 	return post;
 }
 
 exports.loadPost = function(req, callback){
 
-	var dir = __dirname+'/content/'+req.params.type+'/'+req.params.entry;
+	var dir = __dirname+'/content/'+req.params.type+'/'+req.params.year+'/'+req.params.entry;
 
 	fs.readdir(dir, function(err, files){
 
@@ -217,16 +219,12 @@ var walk = function(dir, extension, done) {
         //Check to see if this is a sub directory
         if (stat && stat.isDirectory()) {
 
-        	console.log("Is directory: "+file);
-          	
           	//Walk the sub directory
           	walk(file, extension, function(err, res) {
           		
           		if(getExtension(res.toString()) == extension){
           			results = results.concat(res);
           		}
-
-          		console.log("Results: "+results);
 
             	if (!--pending) done(null, results);
           

@@ -1,6 +1,5 @@
-$footer-colour: rgb(39, 37, 33);
-$navbar-colour: rgba(39, 37, 33, 0.3);
-$navigation-link-color: #FFF;
+@import "vars";
+@import "compass/css3/border-radius";
 
 header {
 	height: 400px;
@@ -21,13 +20,51 @@ header {
 	}
 }
 
+hr {
+	display: block;
+	height: 1px;
+	border: 0;
+	border-top: 1px solid $tag-background-colour;
+	margin: 1em 0;
+	padding: 0; 
+}
+
+ul.tags {
+	margin: 8px 0px;
+	border: none;
+	.tag {
+
+		background-color: $tag-background-colour;
+		padding: 4px 8px 4px 8px;
+		@include border-radius(8px, 8px);
+
+		a {
+			color: $body-text-colour;
+		}
+	}
+}
+
 footer {
 	color: $navigation-link-color;
 	background-color: $footer-colour;
+	
 	a {
 		color: $navigation-link-color;
 	}
+	padding: 20px 8px 20px 8px;
 
+	hr {
+		border-top: 1px solid #353024;
+	}
+
+	.bottom {
+		min-height: 50px;
+	}
+
+	.copyright {
+		padding: 0.4rem 1rem;
+		vertical-align: center;
+	}
 }
 
 .list {
@@ -36,8 +73,25 @@ footer {
 	}
 }
 
+.blog-post {
+	padding: 20px 8px 20px 8px;
+}
+
 .blog-post.detail {
 	h2 {
 		text-align:center;
+	}
+}
+
+.post-meta {
+	padding: 20px 0;
+	img.author {
+		display:block;
+		height: 75px;
+		width: 75px;
+		border-style: solid;
+		border: 1px solid #353024;
+		@include border-radius(100px, 100px);
+		margin: 0 auto;
 	}
 }

@@ -22,6 +22,7 @@ nunjucks.configure('views', {
 //Set up the static content directories for client side assets
 app.use('/static',express.static(__dirname + '/static'));
 app.use('/images',express.static(__dirname + IMAGE_DIR));
+app.use('/content',express.static(__dirname + '/content'));
 
 var faviconFix = function(req, res, next){
 	if(req.params.type === 'favicon.ico'){
@@ -139,11 +140,9 @@ app.get('/tags/:tag', faviconFix, function(req, res){
  * 5. Post types Get all content by type - This has to be defined after any custom routes, pages etc.
  * Loads a paginated list of all content in one of the content/ sub directories
  **/
-app.get('/:type', faviconFix, function(req, res){
+app.get('/:type/', faviconFix, function(req, res){
 	
-	console.log(req);
-
-	blogHelper.loadPosts({contentType: req.params.type, pageNumber: req.query.page,limit: req.query.limit}, function(data){
+	blogHelper.loadPosts({year: req.params.year, contentType: req.params.type, pageNumber: req.query.page,limit: req.query.limit}, function(data){
 		
 		if(data){
 			var page = blogHelper.pageObject();
@@ -168,7 +167,7 @@ app.get('/:type', faviconFix, function(req, res){
  * Get Entry detail
  * Loads a single article and renders it using the template specified in the articles markdown
  **/
-app.get('/:type/:entry', faviconFix, function(req, res){
+app.get('/:type/:year/:entry', faviconFix, function(req, res){
 	
 	blogHelper.loadPost(req, function(post){
 		

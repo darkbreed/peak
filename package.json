@@ -24,7 +24,6 @@
     "meta-marked": "^0.3.1",
     "morgan": "^1.7.0",
     "node-find-files": "0.0.2",
-    "node-markdown": "^0.1.1",
     "paginator": "1.0.0",
     "grunt": "^0.4.5",
     "grunt-contrib-compass": "^0.9.0",

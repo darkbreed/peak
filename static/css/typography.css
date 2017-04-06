@@ -1,15 +1,15 @@
 @import url("https://fonts.googleapis.com/css?family=Amatic+SC|PT+Sans|Vollkorn");
-/* line 11, ../scss/typography.scss */
-h1, h2, h3, h4, h5, h6 {
+/* line 4, ../scss/typography.scss */
+h1, h2, h3, h4, h5, h6, html, footer {
   font-family: "Vollkorn", serif;
   color: #403d34;
 }
-/* line 15, ../scss/typography.scss */
-h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
+/* line 8, ../scss/typography.scss */
+h1 a, h2 a, h3 a, h4 a, h5 a, h6 a, html a, footer a {
   color: #403d34;
 }
 
-/* line 20, ../scss/typography.scss */
+/* line 14, ../scss/typography.scss */
 h1#site-title {
   font-family: "Amatic SC", cursive;
   text-align: center;
@@ -17,32 +17,41 @@ h1#site-title {
   font-size: 6em;
 }
 
-/* line 27, ../scss/typography.scss */
+/* line 21, ../scss/typography.scss */
 a {
   color: #ccb285;
 }
 
-/* line 31, ../scss/typography.scss */
+/* line 25, ../scss/typography.scss */
 .blog-post {
   font-family: "Vollkorn", serif;
   color: #403d34;
 }
-/* line 33, ../scss/typography.scss */
+/* line 27, ../scss/typography.scss */
 .blog-post h2 {
   color: #211931;
 }
-/* line 40, ../scss/typography.scss */
+/* line 34, ../scss/typography.scss */
 .blog-post .post-date {
   font-family: "PT Sans", sans-serif;
 }
-/* line 44, ../scss/typography.scss */
+/* line 38, ../scss/typography.scss */
 .blog-post .post-content {
   font-family: "Vollkorn", serif;
 }
 
-/* line 49, ../scss/typography.scss */
+/* line 43, ../scss/typography.scss */
 span.serif-italic {
   font-family: "Vollkorn", serif;
   font-style: italic;
-  font-size: 0.8em;
+  font-size: 1em;
+}
+
+/* line 49, ../scss/typography.scss */
+footer {
+  font-family: "PT Sans", sans-serif;
+}
+/* line 51, ../scss/typography.scss */
+footer h3 {
+  color: #FFF;
 }

@@ -8,16 +8,17 @@
           <div class="blog-post">
             <h3 class="text-center"><a href="/{{post.meta.url}}">{{post.meta.title}}</a></h3>
             <h6 class="text-center post-date"><span class="serif-italic">Posted by</span> {{post.meta.author.shortname}} <span class="serif-italic">on</span> {{post.meta.displayDate}}</h6>
-            <img class="thumbnail text-center" src="https://placehold.it/850x350">
+            {% if post.meta.featureImage %}
+            <img class="thumbnail text-center" src="{{post.meta.featureImage}}">
+            {% endif %}
             <p class="intro">{{post.meta.intro}}</p>
-            <div class="callout">
-            <ul class="menu simple">
+            <ul class="menu simple tags">
               {% for tag in post.meta.tags %}
-                <li><a href="/tags/{{tag}}">{{tag}}</a></li>
+                <li class="tag"><a href="/tags/{{tag}}">{{tag}}</a></li>
               {% endfor %}
             </ul>
-            </div>
           </div>
+          <hr />
           {% endfor %}
           {% if pager %}
             {% if pager.has_previous_page %}

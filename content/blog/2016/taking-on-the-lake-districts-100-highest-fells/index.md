@@ -1,9 +1,9 @@
 ---
 title: Taking on the 100 highest Lakeland Fells, our challenge starts here
 author: ben
-featureImageUrl: ""
 tags: ["blog","Lakeland 100"]
 postType: post
+postDate: "2016-08-14T09:58:58.000Z"
 intro: After years of being overweight and unfit, I have decided to go back to doing what I used to love, hiking. Ok so I didn’t enjoy every aspect of it, the early starts were never my thing when I was younger but between the ages of about 15 and...
 ... 
 
@@ -11,7 +11,7 @@ After years of being overweight and unfit, I have decided to go back to doing wh
 
 I used to really enjoy it when I was out there but then life got in the way, and I started working part time on the weekends while at college, then came University, pubs and gigs (ok, so I did that at college too) and then a career in software development began. In between all this I met my lovely wife and we bought a flat (and a cat), then a few years later a house and before you know it we are 32; 13 years have passed and the biggest hill I have been up in that time is probably the path back home from Beeses Tea Gardens. Actually thats not true, we did climb Cadair Idris a few years back but you get the idea, I am out of shape.
 
-###Why are we doing this?
+##### Why are we doing this?
 
 There are a few driving forces behind this. For one, we love travelling and I love photography so it’s a good excuse to get out and take photos and justify all of the expensive gear I have acquired, another reason is to get fit and get back to doing what we enjoy. But there is a third reason, Julie and I have been going through consultations for fertility treatment over the last year and a couple of things have come out of it, but needless to say my weight and fitness were topics of discussion and I was told I needed to do something about it. It’s the biggest incentive I have had (and probably will ever have) to start eating better, cut down on the drinking and get fit again.
 
@@ -19,7 +19,7 @@ At my heaviest a couple of years ago I topped the scales at 18st 4lb, which is f
 
 The first round of consultations went ok, I hit my target weight but then stalled again and the weight crept back up over the festive season and then at our next round of appointments the subject reared its head again so I decided to do something a bit more drastic: I took up running. Now, I hate running and always have but I hate it less than cycling and going for a hike 3 times a week is just not practical. Luckily our neighbour had a treadmill that was gathering dust in his garage so he kindly donated it to me and I started on a couch to 5k program. I also went and spent silly money on an Apple watch to track my progress figured all of the beer vouchers I wouldn’t be spending may as well go to good use. I have now just completed the 5k program in just over 10 weeks and have managed to shift over a stone and a half in weight by doing this and cutting out alcohol completely midweek. To be honest I have cut down massively on weekends too. No more Keith Floyd style cooking sessions for me, well for now at least.
 
-###The Lakeland one hundred
+##### The Lakeland one hundred
 
 Ten weeks on from the decision to get fit, I have just started on the 10k program but I really want to get back up in the hills again, for a good few reasons. Firstly I prefer it to running, although I will still keep it up as its more practical for midweek training. Secondly, it’s really pretty out there. We have some amazing countryside and having spent the best part of a grand on camera kit this year alone I really should get out and capture it so a couple of weeks ago Julie and I decided to get back up to the Lake District for a couple of days and head for the hills again. Julie hasn’t really done as much of this as I used to do, but the few walks we have done she has enjoyed and she wants to get back out as much as I do.
 

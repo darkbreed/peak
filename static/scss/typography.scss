@@ -1,14 +1,7 @@
+@import "vars";
 @import url('https://fonts.googleapis.com/css?family=Amatic+SC|PT+Sans|Vollkorn');
 
-$sans-serif: 'PT Sans', sans-serif;
-$serif: 'Vollkorn', serif;
-$display: 'Amatic SC', cursive;
-
-$body-text-colour: #403d34;
-$link-colour: #ccb285;
-$title-colour: rgb(33,25,49); 
-
-h1, h2, h3, h4, h5, h6 {
+h1, h2, h3, h4, h5, h6, html, footer {
 	font-family: $serif;
 	color: $body-text-colour;
 
@@ -16,6 +9,7 @@ h1, h2, h3, h4, h5, h6 {
 		color: $body-text-colour;
 	}
 }
+
 
 h1#site-title {
 	font-family: $display;
@@ -49,5 +43,14 @@ a {
 span.serif-italic {
 	font-family: $serif;
 	font-style: italic;
-	font-size: 0.8em;
+	font-size: 1em;
+}
+
+footer {
+	
+	h3 {
+		color: #FFF;
+	}
+
+	font-family: $sans-serif;
 }

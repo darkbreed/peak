@@ -4,32 +4,30 @@
     
       <article class="blog-post detail">  
         <div class="large-12 columns">
-
           <h2>{{ post.meta.title }}</h2>
-          
-          <div class="tags no-print">
-            <p><span class="tags-label">Tags</span>:
-              {% for tag in post.meta.tags %}
-              <a href="/tags/{{tag}}">{{tag}}</a>,
-              {% endfor %}
-            </p>
-          </div>
-      
         </div>
         <div class="large-12 columns post-content">
-          <hr />
+          <img class="thumbnail text-center" src="{{post.meta.featureImage}}">
           {{ post.html|safe }}
+          <ul class="menu simple tags">
+            {% for tag in post.meta.tags %}
+              <li class="tag"><a href="/tags/{{tag}}">{{tag}}</a></li>
+            {% endfor %}
+          </ul>
         </div>
-        <div class="small-12 columns">
-          <h3 class="hide-for-medium-up no-print">Share this...</h3>
-          <div class="addthis_sharing_toolbox hide-for-medium-up no-print"></div>
-          <!-- Go to www.addthis.com/dashboard to customize your tools -->
-          <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=benreed"></script>
-        </div> 
+        <hr/>
+        <div class="row large-12 post-meta">
 
-        <div class="small-12 columns post-meta">
-          <img src="{{post.meta.author.gravatarUrl}}" />
-          <h5>Written by <a href="/authors/{{post.meta.author.shortname}}">{{post.meta.author.name}}</a> on {{post.meta.displayDate}}</h5>
+          <div class="small-2 medium-2 large-2 columns">
+            <img src="{{post.meta.author.gravatarUrl}}" class="author"/>
+          </div>
+
+          <div class="small-10 medium-10 large-10 columns">
+            <h5>Written by <a href="/authors/{{post.meta.author.shortname}}">{{post.meta.author.name}}</a> on {{post.meta.displayDate}}</h5>
+            <div class="addthis_sharing_toolbox hide-for-medium-up no-print"></div>
+            <!-- Go to www.addthis.com/dashboard to customize your tools -->
+            <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=benreed"></script>
+          </div> 
         </div>
 
       </article>

@@ -1,6 +1,6 @@
 {
   "locals": {
-    "url": "http://localhost:3000",
+    "url": "http://localhost",
     "name": "One Hundred Peaks",
     "owner": "Ben Reed",
     "description": "Hiking stuff"
