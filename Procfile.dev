@@ -1,0 +1,2 @@
+grunt: grunt watch
+web: nodemon app.js
