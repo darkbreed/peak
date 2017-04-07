@@ -109,7 +109,7 @@ app.get('/feeds/:type', function(req, res){
 		res.contentType("application/rss+xml");
 		res.render(config.templates.rss, {
 			name: config.locals.name,
-			url: process.env.APP_URL || config.locals.url,
+			url: process.env.APP_URL || config.locals.APP_URL,
 			description: config.locals.description,
     		posts : data.results
   		});

@@ -1,2 +1,1 @@
-compass: compass watch
-node: nodemon app.js
+web: node app.js

@@ -133,7 +133,6 @@ exports.loadPosts = function(options, callback){
 }
 
 exports.createPostObjectFromFile = function(file, options){
-	console.log(file);
 	//Create a post object
 	var post = md(fs.readFileSync(file, "utf8"));	
 	var components = file.split(path.sep);
@@ -143,10 +142,14 @@ exports.createPostObjectFromFile = function(file, options){
 	var articleDir = components.join('/');
 	post.meta.url = articleDir;
 
-	var environmentURL = process.env.APP_URL+":"+process.env.APP_PORT || config.locals.url+":"+config.app.port;
-	var featureImagePath = environmentURL+"/content/"+articleDir+"/featureImage.jpg";
-	console.log(featureImagePath);
-	if(fs.existsSync(featureImagePath)){
+	//We need to create the URL for the post, but  need to check the PATH to see if the 
+	//file exists.
+	var baseURL = process.env.APP_BASE_URL;
+	var environmentURL = baseURL+":"+process.env.PORT;
+	var featureImagePath = "/content/"+articleDir+"/featureImage.jpg"
+	var featureImageURL = environmentURL+featureImagePath;
+
+	if(fs.existsSync("."+featureImagePath)){
 		post.meta.featureImage = featureImagePath;
 	}
 
