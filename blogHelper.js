@@ -143,7 +143,9 @@ exports.createPostObjectFromFile = function(file, options){
 	var articleDir = components.join('/');
 	post.meta.url = articleDir;
 
-	var featureImagePath = "./content/"+articleDir+"/featureImage.jpg";
+	var environmentURL = process.env.APP_URL+":"+process.env.APP_PORT || config.locals.url+":"+config.app.port;
+	var featureImagePath = environmentURL+"/content/"+articleDir+"/featureImage.jpg";
+	console.log(featureImagePath);
 	if(fs.existsSync(featureImagePath)){
 		post.meta.featureImage = featureImagePath;
 	}
