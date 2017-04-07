@@ -144,10 +144,7 @@ exports.createPostObjectFromFile = function(file, options){
 
 	//We need to create the URL for the post, but  need to check the PATH to see if the 
 	//file exists.
-	var baseURL = process.env.APP_BASE_URL;
-	var environmentURL = baseURL+":"+process.env.PORT;
 	var featureImagePath = "/content/"+articleDir+"/featureImage.jpg"
-	var featureImageURL = environmentURL+featureImagePath;
 
 	if(fs.existsSync("."+featureImagePath)){
 		post.meta.featureImage = featureImagePath;

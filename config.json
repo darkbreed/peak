@@ -1,12 +1,8 @@
 {
   "locals": {
-    "url": "http://localhost",
     "name": "One Hundred Peaks",
     "owner": "Ben Reed",
     "description": "Hiking stuff"
-  },
-  "app": {
-    "port": 3000
   },
   "settings":{
     "articlesPerPage": 10,
