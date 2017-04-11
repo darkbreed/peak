@@ -12,26 +12,29 @@
 	<body class="homepage">
 
 		<header>
-
-			<div class="top-bar">
-				<div class="top-bar-left"> 
-					<ul class="menu">
-						<li><a href="/">Blog</a></li>
-					</ul>
-				</div>
-				<div class="top-bar-right">
-					<ul class="menu">
-						<li><a href="#">Van</a></li>
-						<li><a href="#">Travel</a></li>
-						<li><a href="#">Food</a></li>
-						<li><a href="#">Life</a></li>
-					</ul>
+			<div data-sticky-container>
+				<div class="top-bar" data-sticky data-options="marginTop:0;" style="width:100%" data-top-anchor="1" data-btm-anchor="content:bottom">
+					<div class="top-bar-left"> 
+						<ul class="menu">
+							<li><a href="/">Blog</a></li>
+						</ul>
+					</div>
+					<div class="top-bar-right">
+						<ul class="menu">
+							<li><a href="#">Van</a></li>
+							<li><a href="#">Travel</a></li>
+							<li><a href="#">Food</a></li>
+							<li><a href="#">Life</a></li>
+						</ul>
+					</div>
 				</div>
 			</div>
 
-			<div class="row large-4 colums">
-				<h1 id="site-title">Diary of Us</h1>
-			</div>
+			<div id="post-header">
+				{% block postHeader %}{% endblock %}
+			</div>	
+
+		</div>
 
 		</header>
 

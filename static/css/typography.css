@@ -9,7 +9,12 @@ h1 a, h2 a, h3 a, h4 a, h5 a, h6 a, html a, footer a {
   color: #403d34;
 }
 
-/* line 14, ../scss/typography.scss */
+/* line 13, ../scss/typography.scss */
+p {
+  font-size: 1.2em;
+}
+
+/* line 18, ../scss/typography.scss */
 h1#site-title {
   font-family: "Amatic SC", cursive;
   text-align: center;
@@ -17,41 +22,41 @@ h1#site-title {
   font-size: 6em;
 }
 
-/* line 21, ../scss/typography.scss */
+/* line 25, ../scss/typography.scss */
 a {
   color: #ccb285;
 }
 
-/* line 25, ../scss/typography.scss */
+/* line 29, ../scss/typography.scss */
 .blog-post {
   font-family: "Vollkorn", serif;
   color: #403d34;
 }
-/* line 27, ../scss/typography.scss */
+/* line 31, ../scss/typography.scss */
 .blog-post h2 {
   color: #211931;
 }
-/* line 34, ../scss/typography.scss */
+/* line 38, ../scss/typography.scss */
 .blog-post .post-date {
   font-family: "PT Sans", sans-serif;
 }
-/* line 38, ../scss/typography.scss */
+/* line 42, ../scss/typography.scss */
 .blog-post .post-content {
   font-family: "Vollkorn", serif;
 }
 
-/* line 43, ../scss/typography.scss */
+/* line 47, ../scss/typography.scss */
 span.serif-italic {
   font-family: "Vollkorn", serif;
   font-style: italic;
   font-size: 1em;
 }
 
-/* line 49, ../scss/typography.scss */
+/* line 53, ../scss/typography.scss */
 footer {
   font-family: "PT Sans", sans-serif;
 }
-/* line 51, ../scss/typography.scss */
+/* line 55, ../scss/typography.scss */
 footer h3 {
   color: #FFF;
 }

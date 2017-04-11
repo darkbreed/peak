@@ -1,13 +1,9 @@
 @import "vars";
 @import "compass/css3/border-radius";
+@import "compass/css3/filter";
 
 header {
-	height: 400px;
-	background-size: 100%;
-	background-position: 0 -200px;
-	background-repeat: no-repeat;
-	background-image: url(../images/banner.jpg);
-
+	
 	.top-bar {
 		background-color: $navbar-colour;
 		.menu {
@@ -16,6 +12,21 @@ header {
 			li a {
 				color: $navigation-link-color;
 			}
+		}
+	}
+
+	#post-header {
+		h2 {
+			position: absolute;
+			display: block;
+			bottom: 50%;
+			color: #FFF;
+			text-align: center;
+			width: 100%;
+		}
+
+		img {
+			width: 100%;
 		}
 	}
 }
