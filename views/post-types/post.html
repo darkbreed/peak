@@ -1,16 +1,21 @@
 {% extends "layout.html" %}
 
-{% block postHeader %}
-  <div class="large-12">
-      <h2>{{ post.meta.title }}</h2>
-      <img class="article-feature" src="{{post.meta.featureImage}}"/>
-  </div> 
+{% block hero %} 
+<div id="hero">
+  <div id="hero-image" style="background: url({{post.meta.featureImage}}")>
+    
+    <div id="post-title">
+        <h2>{{ post.meta.title }}</h2>
+    </div>
+
+  </div>
+</div>
+
 {% endblock %}
 
-{% block content %}
-    
+{% block content %}  
       <article class="blog-post detail">  
-        <div class="large-12 columns post-content">
+        <div class="large-12 columns post-content">          
           {{ post.html|safe }}
           <ul class="menu simple tags">
             {% for tag in post.meta.tags %}
@@ -20,6 +25,10 @@
         </div>
         <hr/>
         <div class="row large-12 post-meta">
+
+          <div class="small-2 medium-2 large-2 columns">
+            <img src="{{post.meta.author.gravatarUrl}}" class="author"/>
+          </div>
 
           <div class="small-10 medium-10 large-10 columns">
             <h5>Written by <a href="/authors/{{post.meta.author.shortname}}">{{post.meta.author.name}}</a> on {{post.meta.displayDate}}</h5>

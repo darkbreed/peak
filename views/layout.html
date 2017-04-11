@@ -13,12 +13,7 @@
 
 		<header>
 			<div data-sticky-container>
-				<div class="top-bar" data-sticky data-options="marginTop:0;" style="width:100%" data-top-anchor="1" data-btm-anchor="content:bottom">
-					<div class="top-bar-left"> 
-						<ul class="menu">
-							<li><a href="/">Blog</a></li>
-						</ul>
-					</div>
+				<div class="top-bar">
 					<div class="top-bar-right">
 						<ul class="menu">
 							<li><a href="#">Van</a></li>
@@ -29,14 +24,13 @@
 					</div>
 				</div>
 			</div>
-
-			<div id="post-header">
-				{% block postHeader %}{% endblock %}
-			</div>	
-
 		</div>
 
 		</header>
+
+		<div>
+			{% block hero %} {% endblock %}
+		</div>
 
 		<div id="main-content">
 			<div class="row medium-8 large-7 columns">
