@@ -7,12 +7,17 @@ var fs = require('fs')
 	, moment = require('moment')
 	, authors = require('./authors.json')
 	, gravatar = require('gravatar')
-	, paginator = new Paginator(config.settings.articlesPerPage,config.settings.pagerLinks);
+	, paginator = new Paginator(config.settings.articlesPerPage,config.settings.pagerLinks)
+	, BLOG_DIR = 'content/blog/';
 
 var exports = module.exports = {};
 
 exports.pageObject = function(){
-	return config.page;
+
+	var page = config.page;
+	page.archives = this.getYearArchives();
+
+	return page;
 }
 
 //Blog Helpers
@@ -58,6 +63,34 @@ exports.getArchive = function(callback){
 		callback(archive);
 
 	});
+}
+
+
+exports.getYearArchives = function(){
+
+	var years = [];
+
+	//Load all the directories
+	var directories = fs.readdirSync(BLOG_DIR); 
+
+	//Else list the files
+    directories.forEach(function(file) {
+  		
+  		var fileStat = fs.statSync(__dirname+"/"+BLOG_DIR+file);
+
+		if(fileStat.isDirectory()){
+
+			var year = new Object();
+			year.displayText = file;
+			year.path = "blog/"+file;
+
+			years.push(year);
+		}
+
+    });
+
+    return years;
+
 }
 
 /**

@@ -1,16 +1,12 @@
 {% extends "layout.html" %}
 
 {% block hero %} 
-<div id="hero">
   <div id="hero-image" style="background: url({{post.meta.featureImage}}")>
-    
     <div id="post-title">
-        <h2>{{ post.meta.title }}</h2>
+        <h2 class="title">{{ post.meta.title }}</h2>
+        <h6>Posted by <a href="/authors/{{post.meta.author.shortname}}">{{post.meta.author.shortname}}</a> on {{post.meta.displayDate}}</h6>
     </div>
-
   </div>
-</div>
-
 {% endblock %}
 
 {% block content %}  
@@ -26,12 +22,12 @@
         <hr/>
         <div class="row large-12 post-meta">
 
-          <div class="small-2 medium-2 large-2 columns">
+          <div class="author-avatar row large-12">
             <img src="{{post.meta.author.gravatarUrl}}" class="author"/>
+            <h6>{{post.meta.author.name}}</h6>
           </div>
 
-          <div class="small-10 medium-10 large-10 columns">
-            <h5>Written by <a href="/authors/{{post.meta.author.shortname}}">{{post.meta.author.name}}</a> on {{post.meta.displayDate}}</h5>
+          <div class="share row large-12 full-width">
             <div class="addthis_sharing_toolbox hide-for-medium-up no-print"></div>
             <!-- Go to www.addthis.com/dashboard to customize your tools -->
             <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=benreed"></script>
@@ -40,7 +36,7 @@
 
       </article>
       <div class="large-12 columns">
-        <div id="disqus_thread"></div>    
+        <div id="disqus_thread"></div>
       </div>
 
     <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>

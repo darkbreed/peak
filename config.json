@@ -23,6 +23,28 @@
     "post-gallery": "post-gallery.html"
   },
   "page": {
-    "social": {}
+    "copyright":"Site design copright &copy; Ben Reed 2017",
+    "social": [
+      {
+        "name":"Facebook",
+        "url":"#"
+      },
+      {
+        "name":"Twitter",
+        "url":"#"
+      },
+      {
+        "name":"Instagram",
+        "url":"#"
+      },
+      {
+        "name":"Flickr",
+        "url":"#"
+      },
+      {
+        "name":"500px",
+        "url":"#"
+      }
+    ]
   }
 }

@@ -1,10 +1,18 @@
 @import "vars";
 @import "compass/css3/border-radius";
 
+html {
+	height: 100%;
+  overflow: hidden;
+}
+
 header {
 
 	.top-bar {
 		background-color: $navbar-colour;
+		position: fixed;
+		z-index: 999;
+		width: 100%;
 		.menu {
 			background: transparent;
 			
@@ -37,6 +45,16 @@ ul.tags {
 			color: $body-text-colour;
 		}
 	}
+}
+
+body {
+	-webkit-perspective: 1px;
+	perspective: 1px;
+	-webkit-transform-style: preserve-3d;
+	transform-style: preserve-3d;
+  height: 100%;
+  overflow-y: scroll;
+  overflow-x: hidden;
 }
 
 footer {
@@ -78,24 +96,48 @@ footer {
 	}
 }
 
-#hero {
-	height: 400px;
+#hero-image {
+	box-sizing: border-box;
+  	padding: 30vw 0 0vw;
+  	position: relative;
+  	transform-style: inherit;
+  	width: 100vw;
+  	background-color: #a0b9a0 !important;
+}
 
-	#hero-image {
-		position: relative;
-		background-size: 100% !important;
-    	background-repeat: no-repeat !important;
-    	height: 100%;
+#hero-image, #hero-image:before {
+  background-size: cover !important;
+  background-position: 0px -50px !important;
+  background-repeat: no-repeat !important;
+}
 
-    	#post-title {
+#hero-image::before {
+  bottom: 0;
+  content: "";
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  min-height: 100vh;
+}
 
-    		position: absolute;
-    		bottom: 0;
-    		width: 70%;
-    		left: 50%;
+#post-title {
+	padding: 0.5vw;
+	background: $transparent-white;
+	margin: 0 auto;
+	width: 75%;
+	
+	h2 {
+		text-align: center;
+		width: 90%;
+		margin: 0 auto;
+		font-size: 2.5em;
+	}
 
-    	}
-
+	h6 {
+		text-align: center;
+		color: #bb976f;
+		padding: 5px;
 	}
 }
 
@@ -110,4 +152,21 @@ footer {
 		@include border-radius(100px, 100px);
 		margin: 0 auto;
 	}
+
+	.author-avatar {
+		width: 100px;
+		margin: 0 auto;
+		text-align: center;
+		h6 {
+			padding: 10px;
+		}
+	}
+
+	.share {
+		text-align:center;
+	}
+}
+
+#main-content {
+	z-index: 10;
 }

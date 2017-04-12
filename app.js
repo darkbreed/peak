@@ -68,7 +68,7 @@ app.get('/peaks/timeline', function(req,res){
  * 3. Blog components
  * Archive list
  **/
-app.get('/archives/:year', function(req, res){
+app.get('/blog/:year', function(req, res){
 
 	blogHelper.getArchive(function(archive){
 
@@ -82,6 +82,14 @@ app.get('/archives/:year', function(req, res){
 		}
 		
 		res.render(config.templates.listview,page);
+
+	});
+
+});
+
+app.get('/archives',function(req, res){
+
+	blogHelper.getYearArchives(function(years){
 
 	});
 

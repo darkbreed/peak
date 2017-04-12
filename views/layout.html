@@ -24,15 +24,17 @@
 					</div>
 				</div>
 			</div>
-		</div>
 
 		</header>
 
-		<div>
+		<div id="hero">
 			{% block hero %} {% endblock %}
 		</div>
 
 		<div id="main-content">
+
+			{{page}}
+
 			<div class="row medium-8 large-7 columns">
 			{% block content %}{% endblock %}
 			</div>	
@@ -41,24 +43,30 @@
 		<!-- Footer -->
 		<footer class="footer">
 			<div class="row full-width">
-		    	<div class="small-12 medium-8 large-8 columns">
+		    	<div class="large-8 columns">
 		      		<h3>About us</h3>
 		      		<p>Just a regular couple from Bristol, UK. We travel, cook, hike, attempt to grow our own food and also keep quail. We are pretty much fully fledged members of the VW owners club as we have a Silver Bug and Yellow T4 called Ellie, which we are in the process of converting to a camper van.</p>
 		      		<p>This site is purely for us to use as a diary for keeping track or our travels and adventures but hopefully there will be some useful info on here for other people too.</p>
+		    	</div>
+		    	<div class="large-4 columns">
+		    		<h3>Archives</h3>
+		      		<ul class="archives">
+            			{% for archive in archives %}
+              			<li class="tag"><a href="{{archive.path}}">{{archive.displayText}}</a></li>
+            			{% endfor %}
+          			</ul>
 		    	</div>
 		 	</div>
 			<div class="bottom row full-width">
 				<hr />
 				<div class="small-12 medium-6 large-6 columns copyright"> 
-					Site design copright &copy; Ben Reed 2017
+					{{copyright|safe}}
 				</div>
 				<div class="small-12 medium-6 large-6 columns"> 
 					<ul class="footer-links menu align-right">
-		        		<li><a href="#">500px</a></li>
-		        		<li><a href="#">Ellie the T4</a></li>
-		        		<li><a href="#">Twitter</a></li>
-		        		<li><a href="#">Instagram</a></li>
-		        		<li><a href="#">Flickr</a></li>
+					{% for socialLink in social %}
+						<li><a href="{{socialLink.url}}">{{socialLink.name}}</a></li>
+					{% endfor %}
 		      		</ul>
 	      		</div>
 			</div>
