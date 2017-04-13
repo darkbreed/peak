@@ -25,9 +25,9 @@ exports.pageObject = function(){
  * Article archive
  * Generates an archive object. All content by year.
  **/
-exports.getArchive = function(callback){
+exports.getArchive = function(year, callback){
 
-	var archive = new Object();
+	var archive = new Array();
 
 	//get all posts
 	this.loadPosts({}, function(data){
@@ -36,26 +36,9 @@ exports.getArchive = function(callback){
 
 		posts.forEach(function(result){
 
-			var year = moment(result.meta.date).format("YYYY");
-
-			//Have we got the year already?
-			if(!archive[year]){
-
-				archive[year] = {
-					posts: new Array()
-				};
-
-				if(archive[year].posts.indexOf(result.meta.title) == -1){
-					archive[year].posts.push(result);
-				}
-
-			//If we have add the post to the array
-			}else{
-
-				if(archive[year].posts.indexOf(result.meta.title) == -1){
-					archive[year].posts.push(result);
-				}
-
+			var resultYear = moment(result.meta.postDate).format("YYYY");
+			if(year == resultYear){
+				archive.push(result);
 			}
 
 		});

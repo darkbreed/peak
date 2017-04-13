@@ -1,26 +1,18 @@
-/* line 4, ../scss/main.scss */
-html {
-  height: 100%;
-  overflow: hidden;
-}
-
-/* line 11, ../scss/main.scss */
+/* line 6, ../scss/main.scss */
 header .top-bar {
   background-color: rgba(255, 255, 255, 0.9);
-  position: fixed;
-  z-index: 999;
   width: 100%;
 }
-/* line 16, ../scss/main.scss */
+/* line 9, ../scss/main.scss */
 header .top-bar .menu {
   background: transparent;
 }
-/* line 19, ../scss/main.scss */
+/* line 11, ../scss/main.scss */
 header .top-bar .menu li a {
   color: #FFF;
 }
 
-/* line 26, ../scss/main.scss */
+/* line 18, ../scss/main.scss */
 hr {
   display: block;
   height: 1px;
@@ -30,12 +22,12 @@ hr {
   padding: 0;
 }
 
-/* line 35, ../scss/main.scss */
+/* line 27, ../scss/main.scss */
 ul.tags {
   margin: 8px 0px;
   border: none;
 }
-/* line 38, ../scss/main.scss */
+/* line 30, ../scss/main.scss */
 ul.tags .tag {
   background-color: #EEEDEA;
   padding: 4px 8px 4px 8px;
@@ -43,62 +35,51 @@ ul.tags .tag {
   -webkit-border-radius: 8px 8px;
   border-radius: 8px / 8px;
 }
-/* line 44, ../scss/main.scss */
+/* line 36, ../scss/main.scss */
 ul.tags .tag a {
   color: #403d34;
 }
 
-/* line 50, ../scss/main.scss */
-body {
-  -webkit-perspective: 1px;
-  perspective: 1px;
-  -webkit-transform-style: preserve-3d;
-  transform-style: preserve-3d;
-  height: 100%;
-  overflow-y: scroll;
-  overflow-x: hidden;
-}
-
-/* line 60, ../scss/main.scss */
+/* line 42, ../scss/main.scss */
 footer {
   color: #FFF;
   background-color: #272521;
   padding: 20px 8px 20px 8px;
 }
-/* line 64, ../scss/main.scss */
+/* line 46, ../scss/main.scss */
 footer a {
   color: #FFF;
 }
-/* line 69, ../scss/main.scss */
+/* line 51, ../scss/main.scss */
 footer hr {
   border-top: 1px solid #353024;
 }
-/* line 73, ../scss/main.scss */
+/* line 55, ../scss/main.scss */
 footer .bottom {
   min-height: 50px;
 }
-/* line 77, ../scss/main.scss */
+/* line 59, ../scss/main.scss */
 footer .copyright {
   padding: 0.4rem 1rem;
   vertical-align: center;
 }
 
-/* line 84, ../scss/main.scss */
+/* line 66, ../scss/main.scss */
 .list .blog-post {
   text-align: center;
 }
 
-/* line 89, ../scss/main.scss */
+/* line 71, ../scss/main.scss */
 .blog-post {
   padding: 20px 8px 20px 8px;
 }
 
-/* line 94, ../scss/main.scss */
+/* line 76, ../scss/main.scss */
 .blog-post.detail h2 {
   text-align: center;
 }
 
-/* line 99, ../scss/main.scss */
+/* line 81, ../scss/main.scss */
 #hero-image {
   box-sizing: border-box;
   padding: 30vw 0 0vw;
@@ -108,14 +89,14 @@ footer .copyright {
   background-color: #a0b9a0 !important;
 }
 
-/* line 108, ../scss/main.scss */
+/* line 90, ../scss/main.scss */
 #hero-image, #hero-image:before {
   background-size: cover !important;
   background-position: 0px -50px !important;
   background-repeat: no-repeat !important;
 }
 
-/* line 114, ../scss/main.scss */
+/* line 96, ../scss/main.scss */
 #hero-image::before {
   bottom: 0;
   content: "";
@@ -126,32 +107,32 @@ footer .copyright {
   min-height: 100vh;
 }
 
-/* line 124, ../scss/main.scss */
+/* line 106, ../scss/main.scss */
 #post-title {
   padding: 0.5vw;
   background: rgba(255, 255, 255, 0.9);
   margin: 0 auto;
   width: 75%;
 }
-/* line 130, ../scss/main.scss */
+/* line 112, ../scss/main.scss */
 #post-title h2 {
   text-align: center;
   width: 90%;
   margin: 0 auto;
   font-size: 2.5em;
 }
-/* line 137, ../scss/main.scss */
+/* line 119, ../scss/main.scss */
 #post-title h6 {
   text-align: center;
   color: #bb976f;
   padding: 5px;
 }
 
-/* line 144, ../scss/main.scss */
+/* line 126, ../scss/main.scss */
 .post-meta {
   padding: 20px 0;
 }
-/* line 146, ../scss/main.scss */
+/* line 128, ../scss/main.scss */
 .post-meta img.author {
   display: block;
   height: 75px;
@@ -163,22 +144,17 @@ footer .copyright {
   border-radius: 100px / 100px;
   margin: 0 auto;
 }
-/* line 156, ../scss/main.scss */
+/* line 138, ../scss/main.scss */
 .post-meta .author-avatar {
   width: 100px;
   margin: 0 auto;
   text-align: center;
 }
-/* line 160, ../scss/main.scss */
+/* line 142, ../scss/main.scss */
 .post-meta .author-avatar h6 {
   padding: 10px;
 }
-/* line 165, ../scss/main.scss */
+/* line 147, ../scss/main.scss */
 .post-meta .share {
   text-align: center;
-}
-
-/* line 170, ../scss/main.scss */
-#main-content {
-  z-index: 10;
 }

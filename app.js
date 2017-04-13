@@ -70,26 +70,18 @@ app.get('/peaks/timeline', function(req,res){
  **/
 app.get('/blog/:year', function(req, res){
 
-	blogHelper.getArchive(function(archive){
+	blogHelper.getArchive(req.params.year,function(archive){
 
 		var page = blogHelper.pageObject();
 		var year = req.params.year;
 
-		if(archive[year]){
-			page.posts = archive[req.params.year].posts;
+		if(archive){
+			page.posts = archive;
 		}else{
 			page.posts = null;
 		}
 		
 		res.render(config.templates.listview,page);
-
-	});
-
-});
-
-app.get('/archives',function(req, res){
-
-	blogHelper.getYearArchives(function(years){
 
 	});
 

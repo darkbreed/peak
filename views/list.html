@@ -1,44 +1,45 @@
 {% extends "layout.html" %}
 
 {% block content %}
-      <!-- Top Navigation -->
-      <div class="list">
-        {% if posts %}
-          {% for post in posts %}
-          <div class="blog-post">
-            <h3 class="text-center"><a href="/{{post.meta.url}}">{{post.meta.title}}</a></h3>
-            <h6 class="text-center post-date"><span class="serif-italic">Posted by</span> {{post.meta.author.shortname}} <span class="serif-italic">on</span> {{post.meta.displayDate}}</h6>
-            {% if post.meta.featureImage %}
-            <img class="thumbnail text-center" src="{{post.meta.featureImage}}">
+      <div class="row large-7 columns">
+        <div class="list">
+          {% if posts %}
+            {% for post in posts %}
+            <div class="blog-post">
+              <h3 class="text-center"><a href="/{{post.meta.url}}">{{post.meta.title}}</a></h3>
+              <h6 class="text-center post-date"><span class="serif-italic">Posted by</span> {{post.meta.author.shortname}} <span class="serif-italic">on</span> {{post.meta.displayDate}}</h6>
+              {% if post.meta.featureImage %}
+              <img class="thumbnail text-center" src="{{post.meta.featureImage}}">
+              {% endif %}
+              <p class="intro">{{post.meta.intro}}</p>
+              <ul class="menu simple tags">
+                {% for tag in post.meta.tags %}
+                  <li class="tag"><a href="/tags/{{tag}}">{{tag}}</a></li>
+                {% endfor %}
+              </ul>
+            </div>
+            <hr />
+            {% endfor %}
+            {% if pager %}
+              {% if pager.has_previous_page %}
+              <div class="medium-2 columns">
+                <a class="button small left radius expand" href="{{contentType}}?page={{pager.previous_page}}">Previous</a>
+              </div>
+              {% endif %}
+
+              {% if pager.has_next_page %}
+              <div class="medium-2 columns">
+                <a class="button small right radius expand" href="{{contentType}}?page={{pager.next_page}}">Next</a>
+              </div>
+              {% endif %}
+
             {% endif %}
-            <p class="intro">{{post.meta.intro}}</p>
-            <ul class="menu simple tags">
-              {% for tag in post.meta.tags %}
-                <li class="tag"><a href="/tags/{{tag}}">{{tag}}</a></li>
-              {% endfor %}
-            </ul>
           </div>
-          <hr />
-          {% endfor %}
-          {% if pager %}
-            {% if pager.has_previous_page %}
-            <div class="medium-2 columns">
-              <a class="button small left radius expand" href="{{contentType}}?page={{pager.previous_page}}">Previous</a>
-            </div>
-            {% endif %}
-
-            {% if pager.has_next_page %}
-            <div class="medium-2 columns">
-              <a class="button small right radius expand" href="{{contentType}}?page={{pager.next_page}}">Next</a>
-            </div>
-            {% endif %}
-
-          {% endif %}
         </div>
-      </div>
 
         {% else %}
           <h2>Oops... sorry no results we found</h2>
         {% endif %}
+      </div>
 
 {% endblock %}
