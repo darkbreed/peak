@@ -93,6 +93,10 @@ footer {
   background-repeat: no-repeat !important;
 }
 
+#hero.home #hero-image{
+	background-image: url('../images/banner.jpg');
+}
+
 #hero-image::before {
   bottom: 0;
   content: "";
@@ -102,6 +106,7 @@ footer {
   top: 0;
   min-height: 100vh;
 }
+
 
 #post-title {
 	padding: 0.5vw;

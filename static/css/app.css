@@ -160,6 +160,11 @@ footer .copyright {
 }
 
 /* line 96, ../scss/main.scss */
+#hero.home #hero-image {
+  background-image: url("../images/banner.jpg");
+}
+
+/* line 100, ../scss/main.scss */
 #hero-image::before {
   bottom: 0;
   content: "";
@@ -170,32 +175,32 @@ footer .copyright {
   min-height: 100vh;
 }
 
-/* line 106, ../scss/main.scss */
+/* line 111, ../scss/main.scss */
 #post-title {
   padding: 0.5vw;
   background: rgba(255, 255, 255, 0.9);
   margin: 0 auto;
   width: 75%;
 }
-/* line 112, ../scss/main.scss */
+/* line 117, ../scss/main.scss */
 #post-title h2 {
   text-align: center;
   width: 90%;
   margin: 0 auto;
   font-size: 2.5em;
 }
-/* line 119, ../scss/main.scss */
+/* line 124, ../scss/main.scss */
 #post-title h6 {
   text-align: center;
   color: #bb976f;
   padding: 5px;
 }
 
-/* line 126, ../scss/main.scss */
+/* line 131, ../scss/main.scss */
 .post-meta {
   padding: 20px 0;
 }
-/* line 128, ../scss/main.scss */
+/* line 133, ../scss/main.scss */
 .post-meta img.author {
   display: block;
   height: 75px;
@@ -207,17 +212,17 @@ footer .copyright {
   border-radius: 100px / 100px;
   margin: 0 auto;
 }
-/* line 138, ../scss/main.scss */
+/* line 143, ../scss/main.scss */
 .post-meta .author-avatar {
   width: 100px;
   margin: 0 auto;
   text-align: center;
 }
-/* line 142, ../scss/main.scss */
+/* line 147, ../scss/main.scss */
 .post-meta .author-avatar h6 {
   padding: 10px;
 }
-/* line 147, ../scss/main.scss */
+/* line 152, ../scss/main.scss */
 .post-meta .share {
   text-align: center;
 }
