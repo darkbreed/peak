@@ -1,23 +1,18 @@
 {% extends "layout.html" %}
 
+{% block hero %}
+
+  {% import "macros.html" as macros %}
+
+  {{ macros.hero(post.meta.title, post.meta.featureImage, post.meta.author.shortname, post.meta.displayDate,post.meta.tags ) }}
+
+{% endblock%} 
+
 {% block content %}  
-      <div id="hero">
-        <div id="hero-image" style="background: url({{post.meta.featureImage}}")>
-          <div id="post-title">
-              <h2 class="title">{{ post.meta.title }}</h2>
-              <h6>Posted by <a href="/authors/{{post.meta.author.shortname}}">{{post.meta.author.shortname}}</a> on {{post.meta.displayDate}}</h6>
-          </div>
-        </div>
-      </div>
       <div class="row medium-8 large-7 columns">
         <article class="blog-post detail">  
           <div class="large-12 columns post-content">          
             {{ post.html|safe }}
-            <ul class="menu simple tags">
-              {% for tag in post.meta.tags %}
-                <li class="tag"><a href="/tags/{{tag}}">{{tag}}</a></li>
-              {% endfor %}
-            </ul>
           </div>
           <hr/>
           <div class="row large-12 post-meta">
@@ -29,17 +24,26 @@
 
             <div class="share row large-12 full-width">
               <div class="addthis_sharing_toolbox hide-for-medium-up no-print"></div>
-              <!-- Go to www.addthis.com/dashboard to customize your tools -->
-              <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=benreed"></script>
+              <div class="addthis_inline_share_toolbox"></div>
             </div> 
           </div>
 
         </article>
         <div class="large-12 columns">
           <div id="disqus_thread"></div>
+<script>
+
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+s.src = 'https://diaryofus.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
         </div>
 
-        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+        
     </div>
 
 {% endblock %}

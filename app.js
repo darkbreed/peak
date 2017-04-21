@@ -73,6 +73,7 @@ app.get('/blog/:year', function(req, res){
 	blogHelper.getArchive(req.params.year,function(archive){
 
 		var page = blogHelper.pageObject();
+		page.title = "Posts from "+req.params.year;
 		var year = req.params.year;
 
 		if(archive){
@@ -82,6 +83,7 @@ app.get('/blog/:year', function(req, res){
 		}
 		
 		res.render(config.templates.listview,page);
+		page.title = null;
 
 	});
 
@@ -128,7 +130,9 @@ app.get('/tags/:tag', faviconFix, function(req, res){
 			var page = blogHelper.pageObject();
 			page.posts = data.results;
 			page.pager = data.page;
+			page.title = "Posts in "+req.params.tag;
 			res.render(config.templates.listview,page);
+			page.title = null;
 		}else{
 			res.render(ERROR_404);
 		}

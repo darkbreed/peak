@@ -1,18 +1,4 @@
-/* line 6, ../scss/main.scss */
-header .top-bar {
-  background-color: rgba(255, 255, 255, 0.9);
-  width: 100%;
-}
-/* line 9, ../scss/main.scss */
-header .top-bar .menu {
-  background: transparent;
-}
-/* line 11, ../scss/main.scss */
-header .top-bar .menu li a {
-  color: #FFF;
-}
-
-/* line 18, ../scss/main.scss */
+/* line 4, ../scss/main.scss */
 hr {
   display: block;
   height: 1px;
@@ -22,64 +8,78 @@ hr {
   padding: 0;
 }
 
-/* line 27, ../scss/main.scss */
+/* line 13, ../scss/main.scss */
 ul.tags {
   margin: 8px 0px;
   border: none;
 }
-/* line 30, ../scss/main.scss */
+/* line 16, ../scss/main.scss */
 ul.tags .tag {
   background-color: #EEEDEA;
+  border: 1px solid #a09a84;
   padding: 4px 8px 4px 8px;
-  -moz-border-radius: 8px / 8px;
-  -webkit-border-radius: 8px 8px;
-  border-radius: 8px / 8px;
+  -moz-border-radius: 10px / 10px;
+  -webkit-border-radius: 10px 10px;
+  border-radius: 10px / 10px;
 }
-/* line 36, ../scss/main.scss */
+/* line 23, ../scss/main.scss */
 ul.tags .tag a {
   color: #403d34;
+  font-size: 0.8em;
 }
 
-/* line 42, ../scss/main.scss */
+/* line 30, ../scss/main.scss */
 footer {
   color: #FFF;
   background-color: #272521;
   padding: 20px 8px 20px 8px;
 }
-/* line 46, ../scss/main.scss */
+/* line 34, ../scss/main.scss */
 footer a {
   color: #FFF;
 }
-/* line 51, ../scss/main.scss */
+/* line 39, ../scss/main.scss */
 footer hr {
   border-top: 1px solid #353024;
 }
-/* line 55, ../scss/main.scss */
+/* line 43, ../scss/main.scss */
 footer .bottom {
   min-height: 50px;
 }
-/* line 59, ../scss/main.scss */
+/* line 47, ../scss/main.scss */
 footer .copyright {
   padding: 0.4rem 1rem;
   vertical-align: center;
 }
 
-/* line 66, ../scss/main.scss */
+/* line 54, ../scss/main.scss */
 .list .blog-post {
   text-align: center;
 }
 
-/* line 71, ../scss/main.scss */
+/* line 59, ../scss/main.scss */
 .blog-post {
   padding: 20px 8px 20px 8px;
 }
 
-/* line 76, ../scss/main.scss */
+/* line 64, ../scss/main.scss */
 .blog-post.detail h2 {
   text-align: center;
 }
 
-/* line 81, ../scss/main.scss */
+/* line 71, ../scss/main.scss */
+#hero .hero-top {
+  position: absolute;
+  top: 0px;
+  width: 100vw;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+}
+/* line 76, ../scss/main.scss */
+#hero .hero-top button.menu-icon {
+  margin: 30px;
+}
+
+/* line 83, ../scss/main.scss */
 #hero-image {
   box-sizing: border-box;
   padding: 30vw 0 0vw;
@@ -89,55 +89,50 @@ footer .copyright {
   background-color: #a0b9a0 !important;
 }
 
-/* line 90, ../scss/main.scss */
+/* line 92, ../scss/main.scss */
 #hero-image, #hero-image:before {
   background-size: cover !important;
-  background-position: 0px -50px !important;
+  background-position: 0px 0px !important;
   background-repeat: no-repeat !important;
 }
 
-/* line 96, ../scss/main.scss */
+/* line 98, ../scss/main.scss */
 #hero.home #hero-image {
   background-image: url("../images/banner.jpg");
+  background-position: 0px -70px !important;
 }
 
-/* line 100, ../scss/main.scss */
-#hero-image::before {
-  bottom: 0;
-  content: "";
-  left: 0;
-  position: absolute;
-  right: 0;
-  top: 0;
-  min-height: 100vh;
+/* line 103, ../scss/main.scss */
+#page-title {
+  margin: 25px;
 }
 
-/* line 111, ../scss/main.scss */
+/* line 107, ../scss/main.scss */
 #post-title {
   padding: 0.5vw;
   background: rgba(255, 255, 255, 0.9);
   margin: 0 auto;
   width: 75%;
 }
-/* line 117, ../scss/main.scss */
+/* line 113, ../scss/main.scss */
 #post-title h2 {
   text-align: center;
   width: 90%;
   margin: 0 auto;
   font-size: 2.5em;
 }
-/* line 124, ../scss/main.scss */
+/* line 120, ../scss/main.scss */
 #post-title h6 {
   text-align: center;
   color: #bb976f;
   padding: 5px;
 }
 
-/* line 131, ../scss/main.scss */
+/* line 127, ../scss/main.scss */
 .post-meta {
   padding: 20px 0;
 }
-/* line 133, ../scss/main.scss */
+/* line 129, ../scss/main.scss */
 .post-meta img.author {
   display: block;
   height: 75px;
@@ -147,19 +142,12 @@ footer .copyright {
   -moz-border-radius: 100px / 100px;
   -webkit-border-radius: 100px 100px;
   border-radius: 100px / 100px;
-  margin: 0 auto;
 }
-/* line 143, ../scss/main.scss */
+/* line 139, ../scss/main.scss */
 .post-meta .author-avatar {
   width: 100px;
-  margin: 0 auto;
-  text-align: center;
 }
-/* line 147, ../scss/main.scss */
+/* line 141, ../scss/main.scss */
 .post-meta .author-avatar h6 {
   padding: 10px;
-}
-/* line 152, ../scss/main.scss */
-.post-meta .share {
-  text-align: center;
 }

@@ -1,0 +1,14 @@
+{% macro hero(title, featureImageUrl, authorName, displayDate, tags) %}
+<div id="hero-image" style="background: url({{featureImageUrl}}")>
+{% include "hero-top.html" %}
+	<div id="post-title">
+	    <h2 class="title">{{ title }}</h2>
+	    <h6>Posted by <a href="/authors/{{authorShortName}}">{{authorShortName}}</a> on {{displayDate}} in</h6>
+        <ul class="menu simple tags menu-centered">
+          {% for tag in tags %}
+            <li class="tag"><a href="/tags/{{tag}}">{{tag}}</a></li>
+          {% endfor %}
+        </ul>
+	</div>
+</div>
+{% endmacro %}

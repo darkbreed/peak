@@ -65,7 +65,7 @@ exports.getYearArchives = function(){
 
 			var year = new Object();
 			year.displayText = file;
-			year.path = "blog/"+file;
+			year.path = "/blog/"+file;
 
 			years.push(year);
 		}

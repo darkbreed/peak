@@ -1,9 +1,22 @@
 {% extends "layout.html" %}
 
+{% block hero %}
+
+<div id="hero" class="home">
+  <div id="hero-image">
+    {% include "hero-top.html" %}
+  </div>
+</div>
+
+{% endblock %}
+
+{% block title %}
+  {% if title %}
+    <h2 id="page-title" class="text-center">{{title}}</h2>
+  {% endif %}
+{% endblock %}
+
 {% block content %}
-      <div id="hero" class="home">
-        <div id="hero-image"></div>
-      </div>
       <div class="row large-7 columns">
         <div class="list">
           {% if posts %}

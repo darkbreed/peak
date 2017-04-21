@@ -1,20 +1,6 @@
 @import "vars";
 @import "compass/css3/border-radius";
 
-header {
-
-	.top-bar {
-		background-color: $navbar-colour;
-		width: 100%;
-		.menu {
-			background: transparent;
-			li a {
-				color: $navigation-link-color;
-			}
-		}
-	}
-}
-
 hr {
 	display: block;
 	height: 1px;
@@ -30,11 +16,13 @@ ul.tags {
 	.tag {
 
 		background-color: $tag-background-colour;
+		border: 1px solid #a09a84;
 		padding: 4px 8px 4px 8px;
-		@include border-radius(8px, 8px);
+		@include border-radius(10px, 10px);
 
 		a {
 			color: $body-text-colour;
+			font-size: 0.8em;
 		}
 	}
 }
@@ -78,6 +66,20 @@ footer {
 	}
 }
 
+#hero {
+	
+	.hero-top {
+		position: absolute;
+		top: 0px;
+		width: 100vw;
+		border-bottom: 1px solid rgba(256,256,256,0.5);
+		button.menu-icon {
+			margin: 30px;
+		}
+
+	}
+}
+
 #hero-image {
 	box-sizing: border-box;
   	padding: 30vw 0 0vw;
@@ -89,24 +91,18 @@ footer {
 
 #hero-image, #hero-image:before {
   background-size: cover !important;
-  background-position: 0px -50px !important;
+  background-position: 0px 0px !important;
   background-repeat: no-repeat !important;
 }
 
 #hero.home #hero-image{
 	background-image: url('../images/banner.jpg');
+	background-position: 0px -70px !important;
 }
 
-#hero-image::before {
-  bottom: 0;
-  content: "";
-  left: 0;
-  position: absolute;
-  right: 0;
-  top: 0;
-  min-height: 100vh;
+#page-title {
+	margin: 25px;
 }
-
 
 #post-title {
 	padding: 0.5vw;
@@ -137,19 +133,17 @@ footer {
 		border-style: solid;
 		border: 1px solid #353024;
 		@include border-radius(100px, 100px);
-		margin: 0 auto;
+		
 	}
 
 	.author-avatar {
 		width: 100px;
-		margin: 0 auto;
-		text-align: center;
 		h6 {
 			padding: 10px;
 		}
 	}
 
 	.share {
-		text-align:center;
+		
 	}
 }
