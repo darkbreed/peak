@@ -15,17 +15,18 @@
             {{ post.html|safe }}
           </div>
           <hr/>
-          <div class="row large-12 post-meta">
+          <div class="row large-12 columns post-meta">
 
-            <div class="author-avatar row large-12">
+            <div class="large-3 small-centered">
               <img src="{{post.meta.author.gravatarUrl}}" class="author"/>
               <h6>{{post.meta.author.name}}</h6>
             </div>
-
-            <div class="share row large-12 full-width">
+            
+            <div class="large-8 small-centered">
               <div class="addthis_sharing_toolbox hide-for-medium-up no-print"></div>
               <div class="addthis_inline_share_toolbox"></div>
-            </div> 
+            </div>
+            
           </div>
 
         </article>

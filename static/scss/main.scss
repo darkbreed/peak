@@ -125,7 +125,7 @@ footer {
 }
 
 .post-meta {
-	padding: 20px 0;
+	
 	img.author {
 		display:block;
 		height: 75px;
@@ -133,17 +133,37 @@ footer {
 		border-style: solid;
 		border: 1px solid #353024;
 		@include border-radius(100px, 100px);
-		
+		margin: 20px auto;
 	}
 
-	.author-avatar {
-		width: 100px;
-		h6 {
-			padding: 10px;
-		}
+	h6 {
+		text-align:center;
 	}
 
 	.share {
 		
 	}
+}
+
+.off-canvas {
+	background-color: $off-canvas-bg-color;
+
+	.close-button {
+		color: #FFF;
+	}
+
+	ul {
+
+		margin: 30px;
+
+		li {
+
+			a {
+				color: #FFF;
+			}
+
+		}
+
+	}
+
 }
