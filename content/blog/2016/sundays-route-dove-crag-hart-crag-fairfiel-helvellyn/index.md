@@ -5,6 +5,7 @@ tags: ["blog","Lakeland 100"]
 postType: post
 postDate: "2016-08-25T10:23:00.000Z"
 intro: "The bank holiday weekend is nearly upon us, we have all our camping gear sorted and are booked into our campsite. The only thing to do now is to decided on a route for Sunday and which of the 100 fells we will tick off our list."
+status: published
 ... 
 
 The bank holiday weekend is nearly upon us, we have all our camping gear sorted and are booked into our campsite. The only thing to do now is to decided on a route for Sunday and which of the 100 fells we will tick off our list. As usual, I have found a technical solution to this and have signed up with Viewranger and I have to say despite the site looking a little dated, the service and apps are very good.

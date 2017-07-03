@@ -114,7 +114,13 @@ exports.loadPosts = function(options, callback){
 						posts.push(post);
 					}
 				}else{
-					posts.push(post);
+
+					console.log(post.meta);
+
+					if(post.meta.status == "published"){
+						posts.push(post);
+					}
+
 				}
 
 			});

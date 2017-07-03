@@ -5,6 +5,7 @@ tags: ["blog","walking","gear"]
 postType: post
 postDate: "2016-08-24T15:00:00.000Z"
 intro: "Let’s get one thing out of the way: I love a good gadget and I spend too much money on them. So as you can imagine my rucksack will be filled with more that just a few sarnies, a fleece and a waterproof to escape the inevitable English rain. The desire to get out in the hill is as much to do with the desire to some of this tech to its potential as it is to get fit and healthy again..."
+status: published
 ...
 
 Let’s get one thing out of the way: I love a good gadget and I spend too much money on them. So as you can imagine my rucksack will be filled with more that just a few sarnies, a fleece and a waterproof to escape the inevitable English rain. The desire to get out in the hill is as much to do with the desire to some of this tech to its potential as it is to get fit and healthy again.
