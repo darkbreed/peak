@@ -5,6 +5,7 @@ tags: ["blog","T4"]
 postType: post
 postDate: "2017-02-11T15:27:00.000Z"
 intro: I've wanted one of these for years and now we have one! We have been looking around for quite a while now trying to find the right van at the right price. And with VW festival season fast approaching we needed to find one, or wait it out until next winter as the prices of these things go through the roof when the festivals start and the sun comes out...
+status: published
 ...
 
 I've wanted one of these for years and now we have one! We have been looking around for quite a while now trying to find the right van at the right price. And with VW festival season fast approaching we needed to find one, or wait it out until next winter as the prices of these things go through the roof when the festivals start and the sun comes out. 

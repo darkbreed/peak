@@ -5,6 +5,7 @@ tags: ["blog","Lakeland 100"]
 postType: post
 postDate: "2016-09-13T12:23:00.000Z"
 intro: "A bit late in posting this but our weekend in the Lakes went well, although the route was not quit the route we had planned. Still, the weather (almost) held out for us and it was a good first attempt."
+status: published
 ... 
 
 A bit late in posting this but our weekend in the Lakes went well, although the route was not quit the route we had planned. Still, the weather (almost) held out for us and it was a good first attempt.
